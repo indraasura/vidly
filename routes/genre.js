@@ -37,9 +37,6 @@ router.get('/:id', async (req, res) => {
 
 // Post routes
 router.post('/', async (req, res) => {
-    const schema = {
-        genre: Joi.string().min(3).required()
-    }
     const {error} = validateGenre(req.body)
     if (error) return res.status(400).send(error.details[0].message)
     let genre = new Genre({ genre: req.body.genre })

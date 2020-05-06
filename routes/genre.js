@@ -1,26 +1,7 @@
 const express = require('express')
-const mongoose = require('mongoose')
+const { Genre } = require('../models/genre') 
 const router = express.Router()
 const Joi = require('joi')
-
-
-const Genre = mongoose.model('Genre', new mongoose.Schema({
-    genre: {
-        type: String,
-        required: true,
-        minlength: 5,
-        maxlength: 50
-    }
-}))
-
-// const genres = [
-//     {id: 1, genre: "horror"},
-//     {id: 2, genre: "comedy"},
-//     {id: 3, genre: "romance"},
-//     {id: 4, genre: "drama"},
-//     {id: 5, genre: "sci-fi"},
-// ]
-
 
 // Get routes
 
